@@ -1,0 +1,11 @@
+394de5739489b0bfc9200aedaca29543 *DESCRIPTION
+8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
+f3a1e7ac0cf4bf394201795aa0cffa2f *R/vintersect.R
+991eab7521bbf9ede753e2e55de1eabd *R/vsetdiff.R
+3b66c16a98d0ca2f149f617547ab0efc *R/vsetequal.R
+0fb0c826b693521e5fee8b5efaae9d26 *R/vunion.R
+edfa16f9f13a8ec8a12af5e5c2ce1b9a *man/vecsets-package.Rd
+d328ab5b010f1d9629d86e44df899aed *man/vintersect.Rd
+25556463fd827151bce4e44eabb68c39 *man/vsetdiff.Rd
+54548ed5d825567849e07743f0e3cc9a *man/vsetequal.Rd
+41f0e8f10ffbd63a0f3acd080056ceff *man/vunion.Rd
