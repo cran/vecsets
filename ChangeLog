@@ -1,0 +1,1 @@
+*vsetdiff (vecsets rev 1.1) - fixed serious bug which returned nothing for disjunct sets. Thanks to Sebastian Fischmeister for reporting the bug

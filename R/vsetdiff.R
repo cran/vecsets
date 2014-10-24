@@ -10,9 +10,13 @@ function (x, y, multiple=TRUE)
     if (length(x) || length(y)) {
         if (!multiple) {
              difout <- unique( x[match(x, y, 0L) == 0L])   #original code plus output obj
-#this which fails on NA, so have to rip things apart..
+#this tapply setup fails on NA, which is why any NA were separated out
               }else {
-              	difout<- xx[-unlist( tapply(yy, yy, function(yyy) head(which(xx == yyy[1]), length(yyy))) ) ]  
+ # if the output of unlist() is length 0
+# then difout <- xx  (foo[-0]  does naughty things)
+              	tapout <- unlist( tapply(yy, yy, function(yyy) head(which(xx == yyy[1]), length(yyy) )   )  ) 
+              	if(length(tapout)) difout<-xx[-tapout] else difout<- xx
+
               	ndif <- max(0,length(xn)-length(yn) )
               	difout<- c(difout, rep(NA,ndif) )
               }
