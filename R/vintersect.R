@@ -1,8 +1,12 @@
-vintersect <-
-function(x,y,multiple=TRUE){
+# Rev 1.2: added checks for empty-set inputs
+vintersect <- function(x,y,multiple=TRUE){
 	trueint <-intersect(x,y)
 	 x <- as.vector(x)
     y <- as.vector(y)
+     # new code to check for empty sets  here
+     # make output look just like base::intersect 
+ if(!length(x) | !length(y)) return( trueint )
+ # end new code
     xx <- x[!is.na(x)]
     xn <- x[is.na(x)]
     yy <- y[!is.na(y)]

@@ -1,1 +1,2 @@
-*vsetdiff (vecsets rev 1.1) - fixed serious bug which returned nothing for disjunct sets. Thanks to Sebastian Fischmeister for reporting the bug
+*vecsets rev. 1.2.1 updated namespace, descr to meet modern CRAN standards
+*vsetdiff (vecsets rev 1.2) - added code to deal with empty sets as inputs
