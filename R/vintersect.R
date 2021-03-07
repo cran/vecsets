@@ -1,24 +1,31 @@
 # Rev 1.2: added checks for empty-set inputs
-vintersect <- function(x,y,multiple=TRUE){
-	trueint <-intersect(x,y)
-	 x <- as.vector(x)
-    y <- as.vector(y)
-     # new code to check for empty sets  here
-     # make output look just like base::intersect 
- if(!length(x) | !length(y)) return( trueint )
- # end new code
-    xx <- x[!is.na(x)]
-    xn <- x[is.na(x)]
-    yy <- y[!is.na(y)]
-    yn <- y[is.na(y)]
-    #unlike vdiff, here I want the difference in how many NA there are
-    ndif <- min(length(xn), length(yn))
-	if(multiple) {
-		intout <- vector()
-		for(jj in 1: length(trueint) ) {
-			intout <- c(intout, rep(trueint[jj], min(length(which(trueint[jj]==xx)),length(which(trueint[jj]==yy) ) ) ) )
-			}
-		trueint<-c( intout, rep(NA,ndif))
+#Jan2021: clean up & speed up
+
+
+vintersect <- function(x, y, multiple=TRUE){
+# base::intersect does as.vector internally
+	 # really can start out with this if() and just return vector() {logical(0)}
+ if(!length(x) | !length(y)) return( vector() )
+ # make output look just like base::intersect 
+    
+if(multiple) {
+	x <- as.vector(x)
+	y <- as.vector(y)
+	xx <- x[!is.na(x)]
+	xn <- length(x) - length(xx) #x[is.na(x)]
+	yy <- y[!is.na(y)]
+	yn <- length(y) - length(yy) # y[is.na(y)]
+	#unlike vdiff, here I want the difference in how many NA there are
+	ndif <- min(xn,yn)  #length(xn), length(yn))
+	intout <- vector()
+# but since base::intersect includes "NA", have to jigger it here
+	trueint = intersect(xx,yy)
+	for(jj in 1: length(trueint) ) {
+		# use sum instead of length(which), is 10% faster at least for big vectors 
+	#intout <- c(intout, rep(trueint[jj], min(length(which(trueint[jj]==xx)), length(which(trueint[jj]==yy) ) ) ) )
+		intout <- c(intout, rep(trueint[jj], min(sum(trueint[jj]==xx),sum(trueint[jj]==yy) ) ) )
 		}
+	trueint<-c( intout, rep(NA,ndif))
 	return(trueint)
+	} else return(intersect(x,y))
 }
