@@ -1,10 +1,8 @@
 vunion <- function (x, y,  multiple=TRUE) {
 # 'multiple' = FALSE is normal union
-#  view of data would mean intersect(x,y) is always empty
-# just call union when !multiple 
+
 if (multiple) {
-# is calling 3 things faster than calculating max(each unique element in x,y)  ??
-# The latter (max()) is 4X faster
+#  (max()) is 4X faster than this
 #	trueun <- c(vintersect(x,y), vsetdiff(x,y), vsetdiff(y,x) )
 # but have to remove NA values to avoid disaster
 	x <- as.vector(x)

@@ -1,11 +1,11 @@
 a2d0e46be5ccc1c87933f474caac8cc2 *ChangeLog
-98d7235392bc3629b7b9fc4aeeada16d *DESCRIPTION
+9cad96bc87b014f64eaa477f6e6e4bb8 *DESCRIPTION
 dd195a357b3666458c306522f8dcfa18 *NAMESPACE
 f5b6b557c5c4b8933d391238a0fe18ec *R/vintersect.R
 c313a4e1f0e3d634130c5062128609af *R/vperm.R
 15bfd44c1e19d9fc5e43d94abb973e2e *R/vsetdiff.R
 bb2fab647ed9a2f643628d1b7d425f4f *R/vsetequal.R
-c48978b9f1425e99725896d140ba6731 *R/vunion.R
+bc5fc3bf04889870861bc6724bfaf9fe *R/vunion.R
 ebfc08a7060ed6d6412c27279ddf6514 *man/vecsets-package.Rd
 d328ab5b010f1d9629d86e44df899aed *man/vintersect.Rd
 32ba9daf1ed2ed3c74118038cd7a7951 *man/vperm.Rd
