@@ -2,7 +2,7 @@
 # hey hey hey: a way to enhance pracma::perms!  
 # 
 # disallow 'simplify = FALSE' 
-vperm <- function(x, m, FUN=NULL, ...) {
+vperm <- function(x, m = if(length(x) == 1) x else length(x), FUN=NULL, ...) {
 	#where m is number of elt's to take at a time 
 elist <- list(...)
 	# force safety internal data type
@@ -13,7 +13,7 @@ elist$simplify = TRUE  # i.e. if some joker puts 'simplify' into ellipsis
 # combn returns all combinations in columns.  The problem is that when I apply a FUN, the result is a vector, 
 # not a  1XN array, and t(vector) turns out to be 1XN, not what I want. 
 
-thecomb <- combn(x, m, FUN, ...)
+thecomb <- combn(x, m , FUN, ...)
 # combn may return an array, albeit of one dimension.  however, ncol(thecomb) will be NA
 # the problem is that certain classes of "x" and certain values of "m" can return different 
 # dimensional results

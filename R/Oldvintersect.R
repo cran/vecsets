@@ -1,4 +1,4 @@
-# rev 1.4: fixed crash on zero intersection, thanks to nathan.cornwell@optum.com
+# rev 1.3: fixed crash on zero intersection, thanks to nathan.cornwell@optum.com
 # Rev 1.2: added checks for empty-set inputs
 #Jan2021: clean up & speed up
 

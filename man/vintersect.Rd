@@ -22,7 +22,7 @@ Should repeated "multiple" items be returned? Default is \code{TRUE}; if set to 
 }
 
 \value{
-A vector of the elements in the intersection of the two vectors. If \code{multiple=FALSE} is set, only unique values are returned.
+A vector of the elements in the intersection of the two vectors. If \code{multiple=FALSE} is set, only unique values are returned. If the intersection is empty, an empty vector of same type is returned, mimicking \code{base::intersect}. 
 }
 
 \author{

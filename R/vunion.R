@@ -1,5 +1,7 @@
 vunion <- function (x, y,  multiple=TRUE) {
 # 'multiple' = FALSE is normal union
+xtype <- typeof(x)
+ if(!length(x) & !length(y)) return( vector(mode = xtype) )
 
 if (multiple) {
 #  (max()) is 4X faster than this

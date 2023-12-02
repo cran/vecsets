@@ -1,3 +1,4 @@
+*vecsets rev 1.4 . Fixed vintersect to return an empty vector if the intersection is empty. Minor cleanups. 
 *vecsets rev 1.3 Added "vperm" to calculate all perms of combs. Updated code for several functions to improve speed. 
 *vecsets rev. 1.2.1 updated namespace, descr to meet modern CRAN standards
 *vsetdiff (vecsets rev 1.2) - added code to deal with empty sets as inputs
